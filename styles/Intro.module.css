@@ -1,0 +1,103 @@
+.intro {
+  display: flex;
+  height: 77vh;
+  margin-top: 6rem;
+  flex-direction: row;
+}
+.ileft {
+  display: flex;
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.iname {
+  display: flex;
+  flex-direction: column;
+}
+.iname > :nth-child(1) {
+  color: var(--black);
+  font-weight: bold;
+  font-size: 3rem;
+}
+.iname > :nth-child(2) {
+  color: var(--orange);
+  font-weight: bold;
+  font-size: 3rem;
+}
+.iname > :nth-child(3) {
+  color: var(--gray);
+  font-weight: 100;
+  font-size: 0.8rem;
+  margin-top: rem;
+}
+
+.iicons {
+  margin-top: 1.5rem;
+  display: flex;
+  color: var(--orange);
+  gap: 4rem;
+  justify-content: center;
+}
+.iicons > * {
+  transform: scale(3);
+}
+.iicons > *:hover {
+  cursor: pointer;
+}
+.iright {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.iright > * {
+  position: absolute;
+  z-index: 1;
+  /* display: flex; */
+}
+.iright > :nth-child(1) {
+  /* left: -3rem;
+    transform: scale(.67);
+    top: -4.5rem; */
+  /* transform: scaleY(90); */
+  left: 1rem;
+  /* min-width: 50vw; */
+
+  transform: rotate(30deg);
+}
+.iright > :nth-child(2) {
+  /* left: 20%; */
+  /* transform: scale(0.8); */
+  /* transform: scaleY(-1); */
+  top: 2rem;
+  transform: rotate(120deg);
+}
+.iright > :nth-child(3) {
+  top: -1rem;
+}
+.float{
+  top:-4rem;
+}
+@media screen and (max-width:480px) {
+  .intro{
+    margin-top: 1rem;
+    flex-direction: column;
+    height: 50rem;
+    /* width: 100vw; */
+  }
+  .iright{
+    transform: scale(.85);
+  }
+  .float{
+    top:-5rem;
+  }
+  .iname > :nth-child(2) {
+    font-size: 2.5rem;
+    padding-left: 0;
+  }
+  .iname > :nth-child(1) {
+    font-size: 2.5rem;
+  }
+}
