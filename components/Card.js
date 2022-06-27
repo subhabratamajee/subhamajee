@@ -3,7 +3,7 @@ import Image from 'next/image'
 function Card({ image, heading, details }) {
     return (
         <div className='card'>
-            <Image className='img' src={image} height='300' width='300' alt='image' />
+            <Image className='img' src={image} height='200' width='300' alt='image' />
             <span>{heading}</span>
             <span>{details}</span>
             <button className='card-button'>Learn More</button>
@@ -11,7 +11,7 @@ function Card({ image, heading, details }) {
         .card{
             width:11rem;
             height:13rem;
-            positopn:absolute;
+            positopn:relative;
             display:flex;
             gap:.5rem;
             align-items:center;
@@ -28,7 +28,7 @@ function Card({ image, heading, details }) {
             font-size:16px;
         }
         .card .img{
-            margin-top:1rem;
+            margin-top:19rem;
             transform: scale(5);
         }
         .card-button{
@@ -42,7 +42,8 @@ function Card({ image, heading, details }) {
         }
         @media screen and (max-width:480px) {
             .card{
-                width:auto;
+                height:auto;
+                width:90vw;
             }
         }
         `}</style>

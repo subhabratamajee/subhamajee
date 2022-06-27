@@ -64,8 +64,6 @@ a {
   background: #edd0ff;
   filter: blur(212px);
   z-index: -9;
-  top: -18%;
-  left: 56%;
   filter: blur(72px);
 }
 
@@ -79,6 +77,9 @@ padding: .2rem .5rem;
     overflow: hidden;
   } */
   .blur{
-    display: none;
+    /* display: none; */
+    width: 16rem;
+  height: 12rem;
+  
   }
 }

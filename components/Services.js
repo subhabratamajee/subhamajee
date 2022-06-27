@@ -2,7 +2,7 @@ import React from 'react'
 import Card from './Card'
 import image from '../public/glassesimoji.png'
 import { motion } from "framer-motion"
-// import subhabrata from '../public/subhabrata.pdf'
+import subhabrata from '../public/boy.png'
 import Link from 'next/link'
 function Services() {
     const transition = { duration: 5, type: "spring" }
@@ -17,23 +17,33 @@ function Services() {
                 </span>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat adipisci quia
                     <br />voluptatibus vel tempore fugit iure neque, autem rem provident.</span>
-                    {/* <Link  href={subhabrata} passHref download> */}
-                    {/* <a > */}
+                    <Link  href={subhabrata}  download>
+                    <a >
                     <button className='button s-button'>Download CV</button>
-                    {/* </a></Link> */}
+                    </a></Link>
                
                 <div className='blur' style={{background:"lightblue"}}></div>
             </div>
             <div className="right" >
                 <motion.div
-                // initial={{left:"14rem"}} whileInView={{left:"25rem"}} transition=y{{transition}}
-                style={{left:'rem'}} >
+                                initial={{left:"25rem"}} whileInView={{left:"14rem"}} transition={{transition}}
+                                className='box' >
+                    
                 <Card  image={image} heading={"UI designer"} details={'Photoshop Canva Figma Designer'}/>
+                
                 </motion.div>
-                <div style={{left:'-4rem',top:'12rem'}} >
+
+                {/* <div style={{left:'-4rem',top:'12rem'}} > */}
+                <motion.div
+                 initial={{ left: "-11rem", top: "12rem" }}
+                 whileInView={{ left: "-4rem" }}
+                 transition={transition}
+
+                >
                 <Card  image={image} heading={"Devloper"} details={'Html, Css,JavaScript, React,  Next Js'}/>
-                </div>
-                <div style={{left:'12rem',top:'19rem'}} >
+                </motion.div>
+                {/* </div> */}
+                <div style={{position:'relative'}} className='box' >
                 <Card  image={image} heading={"UI/UX"} details={'Photoshop Canva Figma Designer'}/>
                 </div>
             
@@ -75,15 +85,18 @@ function Services() {
         position: relative;
     }
     .right>*{
+        // display:flex;
         position: absolute;
     }
-
+.box{
+    position:relative;
+}
     @media screen and (max-width:480px) {
         .services{
             margin-top:0;
             flex-direction:column;
             gap:2rem;
-            height:58rem;
+            height:70rem;
             padding:0;
         }
         .right{

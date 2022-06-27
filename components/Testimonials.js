@@ -27,7 +27,7 @@ function Testimonials() {
     return (
         <div className='testimonials' id='Testimonials'>
             <div className="heading">
-            <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
+            <div className="blur" style={{ background: "rgb(238 210 255)" ,left:'1rem'}}></div>
                 <span>Clients always get </span>
                 <span>Exceptional Work</span>
                 <span>From me</span>

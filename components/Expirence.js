@@ -64,8 +64,15 @@ margin-bottom:8rem
         }
         @media screen and (max-width:480px) {
             .expirence{
-                padding:0;
+                // padding:0;
                 height:1rem;
+            }
+        }
+        @media screen and (max-width:370px) {
+            .expirence{
+                margin-left:.5rem;
+                transform:scale(.8);
+                height:3rem;
             }
         }
         `}</style>

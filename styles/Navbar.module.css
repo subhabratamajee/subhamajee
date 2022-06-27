@@ -33,6 +33,12 @@ flex: 10;
     color: var(--orange);
 }
 @media screen and (max-width:480px) {
+    .navlist{
+        display: none;
+    }
+    
+}
+@media screen and (max-width:380px) {
     .navright{
         display: none;
     }
