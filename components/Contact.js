@@ -16,7 +16,7 @@ function Contact() {
             email,
             message
         };
-        let response = await fetch("http://localhost:3000/api/contact", {
+        let response = await fetch("https://subhabrata.vercel.app/api/contact", {
             method: "POST",
             headers: {
                 Accept: contentType,
