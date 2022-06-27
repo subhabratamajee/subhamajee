@@ -1,9 +1,7 @@
 import React from 'react'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/css';
-import { Pagination } from 'swiper';
-import 'swiper/css/pagination';
 import pp from '../public/profile1.jpg'
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from 'react-responsive-carousel';
 import Image from 'next/image'
 function Testimonials() {
     const clients = [
@@ -27,34 +25,40 @@ function Testimonials() {
     return (
         <div className='testimonials' id='Testimonials'>
             <div className="heading">
-            <div className="blur" style={{ background: "rgb(238 210 255)" ,left:'1rem'}}></div>
+            <div className="blur" style={{ background: "lightblue" ,left:'1rem'}}></div>
                 <span>Clients always get </span>
                 <span>Exceptional Work</span>
                 <span>From me</span>
             </div>
-            {/* <Swiper
-                 modules={[Pagination]}
-                 slidesPerView={1}
-                 pagination={{ clickable: true }}
-            >
+             <Carousel   >
                 {clients.map((client, index) => {
                     return (
-                        
-                        <SwiperSlide key={index}> 
-                          <div className="test">
-                        <Image style={{borderRadius:'50%'}} className='img' height={100} width={100} src={client.img} alt='abc' />
+                        <div style={{
+                            flexDirection:'column',
+                            justifyContent:'space-evenly',
+                            alignItems:'center',
+                            padding:'1rem',
+                            width:'36rem',
+                            height:'12rem',
+                            marginRight:'-15rem',
+                            // left:'400rem',
+                            width:'20rem',
+                            background:'rgba(255,255,255,0.26)',
+                            border:'7px solid var(--blueCard)',
+                            boxShadow:'var(--boxShadow)',
+                            borderRadius:'20px'}} className='carousel-item'  key={index}>
+                        <Image style={{borderRadius:'50%',right:'40rem'}} className='img' height={100} width={100} src={client.img} alt='abc' />
                       
                                 <span>{client.review}</span>
                         </div>
-                            </SwiperSlide>
                     )
                 })}
-            </Swiper> */}
+                </Carousel>
             <style jsx>
                 {`
                 .testimonials{
                     padding: 0 3rem;
-                    height:100vh;
+                    height:20rem;
                     margin-top:5rem;
                     display:flex;
                     flex-direction:column;
@@ -100,6 +104,11 @@ color:var(--gray)
               }
               .testimonials .swiper-pagination-bullet-active{
                 background: var(--orange);
+            }
+            @media screen and (max-width:480px) {
+                .testimonials{
+                    height:30rem;
+                }
             }
                 `}
             </style>

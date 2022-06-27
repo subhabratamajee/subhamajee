@@ -1,18 +1,16 @@
 import { React, useRef, useState } from 'react'
-import emailjs from '@emailjs/browser'
 function Contact() {
     const form = useRef();
-    const [submit, setSubmit] = useState(false)
+    const [submit, setSubmit] = useState("")
+    const [sub, setSub] = useState(false)
     const [error, setError] = useState(false)
     const [name, setName] = useState("")
-    const [email, setEmail] = useState()
+    const [email, setEmail] = useState("")
     const [message, setMessage] = useState("")
     const sendEmail = async (e) => {
         e.preventDefault();
-
         const contentType = "application/json";
-
-        let ebookreq = {
+        let contact = {
             name,
             email,
             message
@@ -23,7 +21,7 @@ function Contact() {
                 Accept: contentType,
                 "Content-Type": contentType,
             },
-            body: JSON.stringify(ebookreq),
+            body: JSON.stringify(contact),
         });
         let dataa = await response.json();
 
@@ -31,12 +29,21 @@ function Contact() {
             setName("");
             setEmail("");
             setMessage("");
-            setSubmit(dataa.message);
+            setSubmit(dataa.message)
+            setError(false)
+            setSub(true)
+            setTimeout(() => {
+                setSub(false)
+            }, 3000)
         } else {
 
-            return(
+            return (
                 setError(true),
-                 setSubmit(dataa.message)
+                setSubmit(dataa.message),
+                setSub(true),
+                setTimeout(() => {
+                    setSub(false)
+                }, 3000)
             )
         }
 
@@ -54,14 +61,17 @@ function Contact() {
             </div>
             <div className="right">
                 <form onSubmit={sendEmail} ref={form} >
-                    <input className='form' value={email} required={true} onChange={(e)=>setEmail(e.target.value)} name='user_email' placeholder='Email' />
-                    <input className='form' value={name} required={true} onChange={(e)=>setName(e.target.value)} name='user_name' placeholder='Name' />
-                    <textarea className='form textarea' required={true} value={message} onChange={(e)=>setMessage(e.target.value)} name='message' placeholder='Message' />
-                    <input style={{ marginLeft: '5rem' }} type='submit' value='send' className='button' />
-                  
-                    {
-                        submit?<span style={error?{color:"red"}:{color:'green'}}>{submit}</span>:''
-                  }
+                    <input className='form' value={email} required={true} onChange={(e) => setEmail(e.target.value)} name='user_email' placeholder='Email' />
+                    <input className='form' value={name} required={true} onChange={(e) => setName(e.target.value)} name='user_name' placeholder='Name' />
+                    <textarea className='form textarea' required={true} value={message} onChange={(e) => setMessage(e.target.value)} name='message' placeholder='Message' />
+                    <div>
+
+                        <input style={{ marginLeft: '5rem' }} type='submit' value='send' className='button' />
+                    </div>
+
+                    <div style={{ marginTop: '1rem' }}>{
+                        sub ? <span style={error ? { color: "red" } : { color: 'green' }}>{submit}</span> : ''
+                    }</div>
                     <div
                         className="blur c-blur1"
                         style={{ background: "var(--purple)", left: '1rem' }}

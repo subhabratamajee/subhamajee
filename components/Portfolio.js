@@ -5,67 +5,34 @@ import ECE from '../public/Screenshot 2022-06-25 124832.jpg'
 import RIC from '../public/Screenshot 2022-06-25 124935.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css";
 function Portfolio() {
     return (
         <div className='portfolio' id='Portfolio' >
             <span> My Recents Projects</span>
             <span>Portfolio</span>
             <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
-            {/* <Swiper
-                spaceBetween={30}
-                slidesPerView={3}
-                grabCursor={true}
-                className="portfolio-slider"
-            > */}
-                {/* <SwiperSlide > <Image height={180} width={300} src={rkmgec} alt='abc'/>
-            <span>abccc</span>
-            </SwiperSlide>
-     <SwiperSlide > <Image height={180} width={300} src={rkmgec} alt='abc'/>
-            <span>abccc</span>
-            </SwiperSlide>
-     <SwiperSlide > <Image height={180} width={300} src={rkmgec} alt='abc'/>
-            <span>abccc</span>
-            </SwiperSlide>
-     <SwiperSlide > <Image height={180} width={300} src={rkmgec} alt='abc'/>
-            <span>abccc</span>
-            </SwiperSlide> */}
-                {/* <SwiperSlide>
-                    <Image src={rkmgec} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <Image src={pp} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={rkmgec} alt="" />
-                </SwiperSlide>
-                <SwiperSlide>
-                    <img src={rkmgec} alt="" />
-                </SwiperSlide> */}
-            {/* </Swiper> */}
-            <Carousel showArrows={true}  >
+            <Carousel>
                   <div className='carousel-item active'>
-                  <Image height={180} width={300} src={rkmgec} alt='abc'/>
-                      <p style={{width:'30rem',margin:"auto"}} className="legend">RKMGEC</p>
+                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={rkmgec} alt='abc'/>
+                      <p  className="legend">RKMGEC</p>
   
                   </div >
                   <div className='carousel-item active'>
-                  <Image height={180} width={300} src={ECE} alt='abc'/>
+                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={ECE} alt='abc'/>
                       <p className="legend">ECE CERTIFICATE</p>
                   </div>
                   <div>
-                  <Image height={180} width={300} src={RIC} alt='abc'/>
+                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={RIC} alt='abc'/>
                       <p className="legend">RIC MEMBERS</p>
   
                   </div>
                   <div>
-                  <Image height={180} width={300} src={rkmgec} alt='abc'/>
+                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={rkmgec} alt='abc'/>
                       <p className="legend">Image 4</p>
   
                   </div>
                   <div>
-                  <Image height={180} width={300} src={rkmgec} alt='abc'/>
+                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={rkmgec} alt='abc'/>
                       <p className="legend">Image 5</p>
   
                   </div>

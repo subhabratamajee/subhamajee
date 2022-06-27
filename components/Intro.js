@@ -4,7 +4,7 @@ import FloatingDiv from './FloatingDiv'
 import styles from '../styles/Intro.module.css'
 import bg1 from '../public/Vector1.png'
 import bg2 from '../public/Vector2.png'
-import me from '../public/boy.png'
+import me from '../public/WhatsApp_Image_2022-06-17_at_4.37.51_PM-removebg-preview (1).png'
 import batch from '../public/crown.png'
 import emoji from '../public/glassesimoji.png'
 import Image from 'next/image'
@@ -24,6 +24,7 @@ function Intro() {
                 </div>
             </div>
             <div className={styles.iright}>
+                
                 <div>
                     <Image height={400} width={300} src={bg1} alt="" />
                 </div>
@@ -33,7 +34,9 @@ function Intro() {
 
                 <div>
                     <Image height={400} width={300} src={me} alt="" />
+                    
                 </div>
+                <div className="blur" style={{ background: "skyblue",zIndex:'100',top:'15rem' }}></div>
                 <motion.div
                     initial={{ left: "-36%" }}
                     whileInView={{ left: "-10%" }}
@@ -46,7 +49,7 @@ function Intro() {
                 whileInView={{left:'35%'}}
                 transition={{transition}}
                 className={styles.float} >
-                    <FloatingDiv image={batch} height={80} width={80} txt1="Web" txt2="Devlopment" />
+                    <FloatingDiv style={{zIndex:'101'}} image={batch} height={80} width={80} txt1="Web" txt2="Devlopment" />
                 
                 </motion.div>
                 <motion.div
