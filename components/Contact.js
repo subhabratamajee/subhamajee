@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser'
 function Contact() {
     const form = useRef();
     const [submit, setSubmit] = useState(false)
+    const [error, setError] = useState(false)
     const [name, setName] = useState("")
     const [email, setEmail] = useState()
     const [message, setMessage] = useState("")
@@ -32,8 +33,11 @@ function Contact() {
             setMessage("");
             setSubmit(dataa.message);
         } else {
-            console.log(dataa.message)
-            return setSubmit(dataa.message);
+
+            return(
+                setError(true),
+                 setSubmit(dataa.message)
+            )
         }
 
     };
@@ -56,7 +60,7 @@ function Contact() {
                     <input style={{ marginLeft: '5rem' }} type='submit' value='send' className='button' />
                   
                     {
-                        submit?<span style={{color:"green"}}>{submit}</span>:''
+                        submit?<span style={error?{color:"red"}:{color:'green'}}>{submit}</span>:''
                   }
                     <div
                         className="blur c-blur1"
