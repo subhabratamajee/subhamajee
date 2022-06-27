@@ -1,54 +1,71 @@
-import {React,useRef,useState} from 'react'
+import { React, useRef, useState } from 'react'
 import emailjs from '@emailjs/browser'
 function Contact() {
-    const form =useRef();
+    const form = useRef();
     const [submit, setSubmit] = useState(false)
-    const sendEmail = (e) => {
+    const [name, setName] = useState("")
+    const [email, setEmail] = useState()
+    const [message, setMessage] = useState("")
+    const sendEmail = async (e) => {
         e.preventDefault();
-    
-        emailjs
-          .sendForm(
-            "service_t08e76t",
-            "template_9l3nj1e",
-            form.current,
-            "c_Q9r2VtbTbtMHInsfhgF"
-          )
-          .then(
-            (result) => {
-              console.log(result.text);
-              setSubmit(true);
-              form.reset();
+
+        const contentType = "application/json";
+
+        let ebookreq = {
+            name,
+            email,
+            message
+        };
+        let response = await fetch("http://localhost:3000/api/contact", {
+            method: "POST",
+            headers: {
+                Accept: contentType,
+                "Content-Type": contentType,
             },
-            (error) => {
-              console.log(error.text);
-            }
-          );
-      };
-    
-  return (
-    <div className='contact' id='Contact'>
-        <div className="left">
-            <span>Get in Touch</span>
-            <span>Contact Me</span>
-            <div
-            className="blur s-blur1"
-            style={{ background: "#ABF1FF94",left:'-2rem' }}
-          ></div>
-        </div>
-        <div className="right">
-            <form onSubmit={sendEmail} ref={form} >
-                <input className='form' name='user_email' placeholder='Email' />
-                <input className='form' name='user_name' placeholder='Name' />
-                <textarea className='form textarea' name='message' placeholder='Message'/>
-                <input style={{marginLeft:'5rem'}} type='submit' value='send' className='button'/>
+            body: JSON.stringify(ebookreq),
+        });
+        let dataa = await response.json();
+
+        if (dataa.success) {
+            setName("");
+            setEmail("");
+            setMessage("");
+            setSubmit(dataa.message);
+        } else {
+            console.log(dataa.message)
+            return setSubmit(dataa.message);
+        }
+
+    };
+
+    return (
+        <div className='contact' id='Contact'>
+            <div className="left">
+                <span>Get in Touch</span>
+                <span>Contact Me</span>
                 <div
-            className="blur c-blur1"
-            style={{ background: "var(--purple)" ,left:'1rem'}}
-          ></div>
-            </form>
-        </div>
-        <style jsx>
-            {`
+                    className="blur s-blur1"
+                    style={{ background: "#ABF1FF94", left: '-2rem' }}
+                ></div>
+            </div>
+            <div className="right">
+                <form onSubmit={sendEmail} ref={form} >
+                    <input className='form' value={email} required={true} onChange={(e)=>setEmail(e.target.value)} name='user_email' placeholder='Email' />
+                    <input className='form' value={name} required={true} onChange={(e)=>setName(e.target.value)} name='user_name' placeholder='Name' />
+                    <textarea className='form textarea' required={true} value={message} onChange={(e)=>setMessage(e.target.value)} name='message' placeholder='Message' />
+                    <input style={{ marginLeft: '5rem' }} type='submit' value='send' className='button' />
+                  
+                    {
+                        submit?<span style={{color:"green"}}>{submit}</span>:''
+                  }
+                    <div
+                        className="blur c-blur1"
+                        style={{ background: "var(--purple)", left: '1rem' }}
+                    ></div>
+                </form>
+            </div>
+            <style jsx>
+                {`
             .contact{
                 display:flex;
                 padding:0 1rem;
@@ -109,9 +126,9 @@ function Contact() {
         }
     }
             `}
-        </style>
-    </div>
-  )
+            </style>
+        </div>
+    )
 }
 
 export default Contact
