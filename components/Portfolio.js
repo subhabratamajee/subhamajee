@@ -11,32 +11,52 @@ function Portfolio() {
             <span> My Recents Projects</span>
             <span>Portfolio</span>
             <div className="blur" style={{ background: "rgb(238 210 255)" }}></div>
-            <Carousel>
-                  <div className='carousel-item active'>
-                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={rkmgec} alt='abc'/>
-                      <p  className="legend">RKMGEC</p>
-  
-                  </div >
-                  <div className='carousel-item active'>
-                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={ECE} alt='abc'/>
-                      <p className="legend">ECE CERTIFICATE</p>
-                  </div>
-                  <div>
-                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={RIC} alt='abc'/>
-                      <p className="legend">RIC MEMBERS</p>
-  
-                  </div>
-                  <div>
-                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={rkmgec} alt='abc'/>
-                      <p className="legend">Image 4</p>
-  
-                  </div>
-                  <div>
-                  <Image style={{borderRadius:'10px'}} height={180} width={300} src={rkmgec} alt='abc'/>
-                      <p className="legend">Image 5</p>
-  
-                  </div>
-              </Carousel>
+            <Carousel showThumbs={false}>
+                <div className='carousel-item active'>
+                    <Image style={{ borderRadius: '10px' }} height={180} width={300} src={rkmgec} alt='abc' />
+                    <p style={{
+                        marginLeft: '-24%',
+                        width: '48%', bottom: '2px',
+                        background:'var(--orange)'
+                    }} className="legend">RKMGEC</p>
+
+                </div >
+                <div className='carousel-item active'>
+                    <Image style={{ borderRadius: '10px' }} height={180} width={300} src={ECE} alt='abc' />
+                    <p style={{
+                        marginLeft: '-24%',
+                        width: '48%', bottom: '2px',
+                        background:'var(--orange)'
+                    }} className="legend">ECE CERTIFICATE</p>
+                </div>
+                <div>
+                    <Image style={{ borderRadius: '10px' }} height={180} width={300} src={RIC} alt='abc' />
+                    <p style={{
+                        marginLeft: '-24%',
+                        width: '48%', bottom: '2px',
+                        background:'var(--orange)'
+                    }} className="legend">RIC MEMBERS</p>
+
+                </div>
+                <div>
+                    <Image style={{ borderRadius: '10px' }} height={180} width={300} src={rkmgec} alt='abc' />
+                    <p style={{
+                        marginLeft: '-24%',
+                        width: '48%', bottom: '2px',
+                        background:'var(--orange)'
+                    }} className="legend">RKMGEC</p>
+
+                </div>
+                <div>
+                    <Image style={{ borderRadius: '10px' }} height={180} width={300} src={rkmgec} alt='abc' />
+                    <p style={{
+                        marginLeft: '-24%',
+                        width: '48%', bottom: '2px',
+                        background:'var(--orange)'
+                    }} className="legend">RKMGEC</p>
+
+                </div>
+            </Carousel>
             <style jsx>
                 {`
     .portfolio{

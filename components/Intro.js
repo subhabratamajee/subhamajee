@@ -9,6 +9,7 @@ import batch from '../public/crown.png'
 import emoji from '../public/glassesimoji.png'
 import Image from 'next/image'
 import Link from 'next/link'
+// import {Link} from 'react-scroll'
 import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineInstagram } from 'react-icons/ai';
 function Intro() {
     const transition = { duration: 5, type: "spring" }
@@ -16,7 +17,9 @@ function Intro() {
         <div className={styles.intro}>
             <div className={styles.ileft}>
                 <div className={styles.iname}><span>Hy! I Am</span> <span>Subhabrata Majee</span><span>Web Devloper with high level of experience in web designing and devlopment, producting the Quality Work...</span></div>
+                <Link href='#Contact' passHref>
                 <button className='button ibutton'>Hire Me</button>
+                </Link>
                 <div className={styles.iicons}>
                     <Link href='https://www.linkedin.com/in/subhabrata-majee/' passHref><AiOutlineLinkedin /></Link>
                     <Link href='https://github.com/subhabratamajee' passHref><AiOutlineGithub /></Link>

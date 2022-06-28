@@ -3,6 +3,7 @@
   height: 77vh;
   margin-top: 6rem;
   flex-direction: row;
+  gap:5rem;
 }
 .ileft {
   display: flex;
@@ -47,6 +48,7 @@
   cursor: pointer;
 }
 .iright {
+  right: 0;
   flex: 1;
   position: relative;
   display: flex;

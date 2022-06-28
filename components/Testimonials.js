@@ -30,7 +30,9 @@ function Testimonials() {
                 <span>Exceptional Work</span>
                 <span>From me</span>
             </div>
-             <Carousel   >
+            <div className="right">
+
+             <Carousel showThumbs={false}  >
                 {clients.map((client, index) => {
                     return (
                         <div style={{
@@ -54,6 +56,7 @@ function Testimonials() {
                     )
                 })}
                 </Carousel>
+                </div>
             <style jsx>
                 {`
                 .testimonials{
@@ -107,7 +110,14 @@ color:var(--gray)
             }
             @media screen and (max-width:480px) {
                 .testimonials{
-                    height:30rem;
+                    height:25rem;
+                }
+            }
+            @media screen and (max-width:412px) {
+                .right{
+                    // height:25rem;
+                    transform:scale(.8);
+                    left:5rem;
                 }
             }
                 `}

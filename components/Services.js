@@ -5,6 +5,7 @@ import { motion } from "framer-motion"
 import subhabrata from '../public/boy.png'
 import Link from 'next/link'
 function Services() {
+    const resume = '/subhabrata.pdf'
     const transition = { duration: 5, type: "spring" }
     return (
         <div id='Services' className='services'>
@@ -17,7 +18,7 @@ function Services() {
                 </span>
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat adipisci quia
                     <br />voluptatibus vel tempore fugit iure neque, autem rem provident.</span>
-                    <Link  href={subhabrata}  download>
+                    <Link  href={resume}  download>
                     <a >
                     <button className='button s-button'>Download CV</button>
                     </a></Link>
@@ -25,25 +26,25 @@ function Services() {
                 <div className='blur' style={{background:"lightblue"}}></div>
             </div>
             <div className="right" >
-                <motion.div
+                {/* <motion.div
                                 initial={{left:"25rem"}} whileInView={{left:"14rem"}} transition={{transition}}
-                                className='box' >
-                    
+                                className='box' > */}
+                    <div style={{left:'10rem',top:'4rem'}} >
                 <Card  image={image} heading={"UI designer"} details={'Photoshop Canva Figma Designer'}/>
-                
-                </motion.div>
+                </div>
+                {/* </motion.div> */}
 
-                {/* <div style={{left:'-4rem',top:'12rem'}} > */}
-                <motion.div
+                <div style={{left:'-4rem',top:'12rem'}} >
+                {/* <motion.div
                  initial={{ left: "-11rem", top: "12rem" }}
                  whileInView={{ left: "-4rem" }}
                  transition={transition}
 
-                >
+                > */}
                 <Card  image={image} heading={"Devloper"} details={'Html, Css,JavaScript, React,  Next Js'}/>
-                </motion.div>
-                {/* </div> */}
-                <div style={{position:'relative'}} className='box' >
+                {/* </motion.div> */}
+                </div>
+                <div style={{left:'10rem',top:'20rem'}} >
                 <Card  image={image} heading={"UI/UX"} details={'Photoshop Canva Figma Designer'}/>
                 </div>
             
@@ -55,6 +56,7 @@ function Services() {
         height:90vh;
         margin-top:8rem;
         margin-bottom:9rem;
+        gap:1rem;
     }
     .left{
         display:flex;

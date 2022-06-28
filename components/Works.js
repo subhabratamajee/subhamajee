@@ -5,13 +5,16 @@ import styles from '../styles/Intro.module.css'
 import facebook from '../public/Facebook.png'
 import amazone from '../public/amazon.png'
 import fiverr from '../public/fiverr.png'
+import {Link} from 'react-scroll'
 function Works() {
     return (
         <>
             <div className='works'>
                 <div className={styles.ileft}>
                     <div className={styles.iname}><span>Works for All these</span> <span>Brands & Clients </span><span>Lorem ipsum dolor sit amet.<br />Lorem ipsum dolor sit amet.</span></div>
+                    <Link spy={true} smooth={true} to='Contact'>
                     <button className='button w-button'>Hire Me</button>
+                    </Link>
                 </div>
                 <div
                     
@@ -47,7 +50,10 @@ function Works() {
 padding:0 1rem;
 display:flex;
 height:90vh;
-margin-top:4rem;}
+margin-top:4rem;
+gap:10rem;
+}
+
 .w-right{
 position:relative;
 top:3rem;
@@ -128,15 +134,17 @@ position:absolute;
         flex-direction:column;
         height:30rem;
         margin-top:0;
+        gap:0;
     }
     .w-right{
+        
         transform:scale(.8);
         left:1rem;
     }
 }
-@media screen and (max-width:412px) {
+@media screen and (max-width:435px) {
     .works{
-        height:23rem;
+        height:25rem;
     }
     .w-right{
         margin-top:-2rem;

@@ -74,7 +74,7 @@ function Contact() {
                     }</div>
                     <div
                         className="blur c-blur1"
-                        style={{ background: "var(--purple)", left: '1rem' }}
+                        style={{ background: "var(--purple)", left: '1rem',top:'1rem' }}
                     ></div>
                 </form>
             </div>
@@ -85,6 +85,7 @@ function Contact() {
                 padding:0 1rem;
                 position:relative;
                 align-items:center;
+                height:15rem;
             }
             .left{
                 flex:1;
