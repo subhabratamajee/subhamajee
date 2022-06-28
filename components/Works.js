@@ -10,15 +10,18 @@ function Works() {
     return (
         <>
             <div className='works'>
+                
                 <div className={styles.ileft}>
                     <div className={styles.iname}><span>Works for All these</span> <span>Brands & Clients </span><span>Lorem ipsum dolor sit amet.<br />Lorem ipsum dolor sit amet.</span></div>
                     <Link spy={true} smooth={true} to='Contact'>
                     <button className='button w-button'>Hire Me</button>
                     </Link>
+                <div className="blur" style={{ background: "skyblue",zIndex:'-1',top:'10rem',left:'-5rem' }}></div>
                 </div>
                 <div
                     
                     className="w-right">
+                        
                     <motion.div
                           initial={{ rotate: 45 }}
                       whileInView={{ rotate: 0 }}

@@ -6,10 +6,10 @@ function Navbar() {
         <div className={styles.nav}>
             <div className={styles.navleft}>
                 <div className={styles.name}>Subhabrata</div>
-                {/* <span>toggle</span> */}
+                {/* <span>toggle</span>
                 <div className="toggle">
 toggle
-                </div>
+                </div> */}
             </div>
             <div className={styles.navright}>
                 <div className={styles.navlist}>

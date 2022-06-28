@@ -23,7 +23,7 @@ function Intro() {
                 <div className={styles.iicons}>
                     <Link href='https://www.linkedin.com/in/subhabrata-majee/' passHref><AiOutlineLinkedin /></Link>
                     <Link href='https://github.com/subhabratamajee' passHref><AiOutlineGithub /></Link>
-                    <Link href='/' passHref><AiOutlineInstagram /></Link>
+                    <Link href='https://www.instagram.com/subhabratamajeeprabir/' passHref><AiOutlineInstagram /></Link>
                 </div>
             </div>
             <div className={styles.iright}>
@@ -40,6 +40,7 @@ function Intro() {
                     
                 </div>
                 <div className="blur" style={{ background: "skyblue",zIndex:'100',top:'15rem' }}></div>
+                <div className="blur" style={{ background: "perple",zIndex:'-1',top:'-5rem', left:'5rem' }}></div>
                 <motion.div
                     initial={{ left: "-36%" }}
                     whileInView={{ left: "-10%" }}
@@ -60,7 +61,7 @@ function Intro() {
                 whileInView={{left:'-10%'}}
                 transition={{transition}}
                 style={{ top: '65%', left: '-20%'}} >
-                    <FloatingDiv image={batch} height={80} width={80} txt1="Best" txt2="Design" />
+                    <FloatingDiv image={batch} height={80} width={80} txt1="Machine" txt2="Learning" />
                 </motion.div>
             </div>
         </div>
