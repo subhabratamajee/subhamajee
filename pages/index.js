@@ -18,14 +18,6 @@ export default function Home() {
         <title>Subhabrata Majee</title>
         <meta name="description" content="Subhabrata Majee" />
             <meta name="description" content="https://subhabrata.vercel.app/" />
-// <script async src="https://www.googletagmanager.com/gtag/js?id=G-67M983DQ8G"></script>
-// <script>
-//   window.dataLayer = window.dataLayer || [];
-//   function gtag(){dataLayer.push(arguments)}
-//   gtag('js', new Date());
-
-//   gtag('config', 'G-67M983DQ8G');
-// </script>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Intro />
